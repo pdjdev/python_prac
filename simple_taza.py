@@ -1,8 +1,9 @@
 #타자연습
-#pip install hgtk six
-import turtle, random, time, hgtk
+#pip install hgtk six requests
+import turtle, random, time, hgtk, requests
 
-dbtxt = open('db.txt', 'r').readlines()
+dbtxt = requests.get('https://raw.githubusercontent.com/pdjdev/tazadb/master/db.txt').text.split('\n')
+
 history = []
 t = 1
 l = 1
@@ -12,7 +13,8 @@ def getkolen(txt):
 
 while True:
     pick = random.choice(dbtxt).strip()
-    if not pick in history:
+    if not p
+    ick in history:
         print('\n'*40)
         
         print('소요 시간:', t)
